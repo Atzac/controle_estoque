@@ -7,25 +7,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
-    <title>Document</title>
+    <title>Logar</title>
+
+    <script>
+        function login() {
+            var done = 0;
+
+            var usuario = document.getElementsByName('usuario')[0].value;
+            var senha = document.getElementsByName('senha')[0].value;
+            senha = senha.toLowerCase();
+
+            console.log(usuario)
+
+            if (usuario == "admin" && senha == "muriçocacomunista") {
+                location.replace("inicial.html")
+                done=1;
+            }
+            if (done==0) { 
+                alert("Dados incorretos, tente novamente"); 
+            }
+        }
+    </script>
 </head>
 
 <body class="background">
     <br><br><br><br><br><br>
     <div class="row m-0 justify-content-around">
-        <div class="col-2 border border-2 rounded-3" style="background-color: white;">
-            <img src="images/login.png" width="100" class="m-auto d-grid p-2 mb-1">
-            <h3 class="text-info text-center">Login</h3>
-            <br>
-            <div class="input-group mb-2">
-                <input type="text" class="form-control" placeholder="Nome">
-            </div>
-            <br>
-            <div class="input-group mb-2">
-                <input type="password" class="form-control" placeholder="Senha">
-            </div>
-            <br>
-            <button type="button" class="btn btn-primary mb-3 m-auto d-grid">Entrar</button>
+        <div class="formulario col-2 border border-2 rounded-3" style="background-color: white; width: 20%;">
+
+                <img src="images/login.png" width="120" class="" style="transform: translate(0%, -40%)">
+                <h3 class="text-info text-center">Login</h3>
+                <br>
+                <div class="input-group mb-2">
+                    <input type="text" class="form-control" name="usuario" placeholder="Usuário">
+                </div>
+                <br>
+                <div class="input-group mb-2">
+                    <input type="password" class="form-control" name="senha" placeholder="Senha">
+                </div>
+                <br>
+                <button type="button" onclick="login()" class="btn btn-primary mb-3 m-auto d-grid">Entrar</button>
+
         </div>
     </div>
 </body>
