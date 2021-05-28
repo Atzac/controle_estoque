@@ -31,6 +31,61 @@
       }
     </style>
 
+    <script>
+
+      class Produto {
+        constructor(id, nome, modelo, valor, quant) {
+          this.id = id;
+          this.nome = nome;
+          this.modelo = modelo;
+          this.valor = valor;
+          this.quant = quant;
+        }
+      }
+
+      var produtos = [new Produto(1, "Monitor", "Acer V226HQL", 656.10, 22)];
+
+      prod_id = [1,2,3,4,5,6,7,8,9,10]
+      prod_nome = ["Monitor","Monitor","Teclado","Teclado","Mouse","Mousepad","Notebook","Notebook","Notebook","Notebook"]
+      prod_modelo = ["Acer V226HQL","Samsung LC24f390","Fortrek Pro K7","HyperX Alloy","Redragon Cobra","Razer Fissure","Acer Nitro 5","	Asus VivoBook","Dell Inspiron i5402","Apple MackBook Air"]
+      prod_valor = [656.10, 859.99, 239.99, 249.99, 114.90, 62.90, 5.399, 2.754, 6.700, 8.899]
+      prod_quant = [22, 12, 122, 56, 99, 58, 4, 6, 12, 3]
+
+      function comparate() {
+            var codigo = parseInt(document.getElementsByName('id-prod')[0].value)
+            var Quantidade = parseInt(document.getElementsByName('qnt-prod')[0].value)
+
+            for (var i=1; i<=10; i++) {
+              if (prod_id[i] == codigo) {
+            document.getElementById("selecionar").innerHTML = 
+            "<div class='table-responsive'>" +
+            "<table class='table table-striped table-sm'>"+
+              "<thead>" +
+                "<tr>" + 
+                  "<th>ID</th>" +
+                  "<th>Item</th>" +
+                  "<th>Modelo</th>" +
+                  "<th>Valor Unit.</th>" +
+                  "<th>Quant. Estoque</th>" +
+                "</tr>"+
+              "</thead>"+
+              "<tbody>"+
+                  "<tr>"+
+                    "<td>"+ prod_id[i] +"</td>" +
+                    "<td>"+ prod_nome[i] +"</td>" +
+                    "<td>"+ prod_modelo[i] +"</td>" +
+                    "<td>"+ prod_valor[i] +"</td>" +
+                    "<td>"+ prod_quant[i] +"</td>" +
+                  "</tr>"+
+              "</tbody>"+
+            "</table>"+
+          "</div>"
+              }
+              
+           }
+      }
+    </script>
+
     
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
@@ -56,7 +111,7 @@
       <div class="position-sticky pt-3">
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
+            <a class="nav-link active" aria-current="page" href="inicial.html">
               <span data-feather="home"></span>
               Dashboard
             </a>
@@ -107,18 +162,18 @@
         <div class="row">
           <div class="col-sm-6">
             <label for="exampleInputEmail1">ID do produto</label>
-            <input type="text" class="form-control" id="exampleInputName" required>
+            <input type="text" class="form-control" onkeyup="comparate()" name="id-prod" id="exampleInputName" required>
           </div>
 
           <div class="col-sm-6">
             <label for="exampleInputEmail1">Quantidade</label>
-            <input type="text" class="form-control" id="exampleInputName" required>
+            <input type="text" class="form-control" name="qnt-prod" id="exampleInputName" required>
           </div>
         </div>
 
         <div class="row mt-5">
           <div class="col-sm-12 text-center">
-            <button type="button" class="btn btn-outline-primary" style="width: 25%">Confirmar</button>
+            <button type="button" class="btn btn-outline-primary"  style="width: 25%">Confirmar</button>
           </div>
         </div>
       </div>
@@ -128,27 +183,8 @@
       
 
       <h3>Produto</h3>
-      <div class="table-responsive">
-        <table class="table table-striped table-sm">
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Item</th>
-              <th>Modelo</th>
-              <th>Valor Unit.</th>
-              <th>Quant. Estoque</th>
-            </tr>
-          </thead>
-          <tbody>
-              <tr>
-                <td>0006</td>
-                <td>Mousepad</td>
-                <td>Razer Fissure</td>
-                <td>62,90</td>
-                <td>58</td>
-              </tr>
-          </tbody>
-        </table>
+      <div class="table-responsive" id="selecionar">
+        
       </div>
       
     </main>
