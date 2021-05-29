@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.83.1">
+  <title>Cadastrar Produto</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
+
+
+
+  <!-- Bootstrap core CSS -->
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+
+  <!-- Custom styles for this template -->
+  <link href="dashboard.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="inicial.html">Muriçoca</a>
+    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse"
+      data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar" aria-label="Search">
+    <ul class="navbar-nav px-3">
+      <li class="nav-item text-nowrap">
+        <a class="nav-link" href="login.html">Sair</a>
+      </li>
+    </ul>
+  </header>
+
+  <div class="container-fluid">
+    <div class="row">
+      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="inicial.html">
+                <span data-feather="home"></span>
+                Dashboard
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="decrementar.html">
+                <span data-feather="minus"></span>
+                Decrementar
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="produtos.html">
+                <span data-feather="shopping-cart"></span>
+                Cadastrar Produto
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="users"></span>
+                Customers
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="bar-chart-2"></span>
+                Reports
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">
+                <span data-feather="layers"></span>
+                Integrations
+              </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+<!--formulário-->
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <div
+          class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Cadastro de Produtos</h1>
+          <div class="btn-toolbar mb-2 mb-md-0">
+          </div>
+        </div>
+        <form class="row g-3 needs-validation">
+          <div class="col-md-4 position-relative">
+            <label for="nomeprod" class="form-label">Produto</label>
+            <input type="text" class="form-control" id="nomeprod" placeholder="Digite o Nome do Produto" maxlength="15"
+              required>
+          </div>
+          <div class="col-md-4 position-relative">
+            <label for="idprod" class="form-label">Código</label>
+            <input type="text" class="form-control" id="idprod" name="idprod" minlength="10" maxlength="10"
+              placeholder="Digite o Código do Produto" required>
+          </div>
+          <div class="col-md-4 position-relative">
+            <label for="tipoprod" class="form-label">Selecione o Tipo do Produto</label>
+            <select class="form-select" id="tipoprod" required>
+              <option>Selecione</option>
+              <option>Componente</option>
+              <option>Máquina</option>
+            </select>
+          </div>
+          <div class="col-md-4 position-relative">
+            <label for="valorprod" class="form-label">Valor</label>
+            <input type="text" class="form-control" id="valorprod" name="valorprod"
+              placeholder="Digite o Valor do Produto" required>
+          </div>
+          <div class="col-md-4 position-relative">
+            <label for="nomefornecedor" class="form-label">Fornecedor</label>
+            <input type="text" class="form-control" id="nomefornecedor" maxlength="30"
+              placeholder="Digite o Nome do Fornecedor" required>
+          </div>
+          <div class="col-md-4 position-relative">
+            <label for="idf" class="form-label">ID do Fornecedor</label>
+            <input type="text" class="form-control" id="idf" name="idf" minlength="14" maxlength="14"
+              placeholder="Digite o ID do Fornecedor" required>
+          </div>
+          <div class="d-grid gap-2">
+            <button class="btn btn-outline-primary" type="submit" onclick="confirmacao()">Cadastrar</button>
+          </div>
+        </form>
+
+        <!--Java script-->
+        <script>
+          function confirmacao()
+          {
+            dado1 = document.getElementById("nomeprod").value
+            dado2 = document.getElementById("idprod").value
+            dado3 = document.getElementById("tipoprod").value
+            dado4 = document.getElementById("nomefornecedor").value
+            dado5 = document.getElementById("valorprod").value
+            dado6 = document.getElementById("idf").value
+
+          
+            if(dado1, dado2, dado4, dado5, dado6 == ""){
+              alert("insira algum dado, e tente novamente!")
+            }
+
+            else if(dado3 == "Selecione"){
+              alert("Selecione o tipo do produto!")
+            }
+
+            else
+            alert("Dados Cadastrados com Sucesso!")
+          }
+          </script>
+
+        <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"
+          integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE"
+          crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"
+          integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha"
+          crossorigin="anonymous"></script>
+        <script src="dashboard.js"></script>
+</body>
+
+</html>
