@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
   <meta name="generator" content="Hugo 0.83.1">
-  <title>Cadastrar Produto</title>
+  <title>Cadastrar produto</title>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/">
 
@@ -48,7 +48,7 @@
     <input class="form-control form-control-dark w-100" type="text" placeholder="Buscar" aria-label="Search">
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
-        <a class="nav-link" href="login.html">Sair</a>
+        <a class="nav-link" href="index.html">Sair</a>
       </li>
     </ul>
   </header>
@@ -59,39 +59,33 @@
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="inicial.html">
+              <a class="nav-link" aria-current="page" href="inicial.html">
                 <span data-feather="home"></span>
-                Dashboard
+                Início
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="decrementar.html">
-                <span data-feather="minus"></span>
-                Decrementar
+              <a class="nav-link" href="buscar.html">
+                <span data-feather="search"></span>
+                Buscar produto
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="produtos.html">
-                <span data-feather="shopping-cart"></span>
+              <a class="nav-link active" href="produtos.html">
+                <span data-feather="plus"></span>
                 Cadastrar Produto
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="users"></span>
-                Customers
+              <a class="nav-link" href="https://github.com/Atzac/controle_estoque.git" target="_blank">
+                <span data-feather="github"></span>
+                Repositório
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="bar-chart-2"></span>
-                Reports
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="layers"></span>
-                Integrations
+              <a class="nav-link" href="sobre.html">
+                <span data-feather="help-circle"></span>
+                Sobre
               </a>
             </li>
           </ul>
@@ -103,23 +97,23 @@
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <div
           class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-          <h1 class="h2">Cadastro de Produtos</h1>
+          <h1 class="h2">Cadastrar produto</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
           </div>
         </div>
         <form class="row g-3 needs-validation">
           <div class="col-md-4 position-relative">
             <label for="nomeprod" class="form-label">Produto</label>
-            <input type="text" class="form-control" id="nomeprod" placeholder="Digite o Nome do Produto" maxlength="15"
+            <input type="text" class="form-control" id="nomeprod" placeholder="Digite o nome do produto" maxlength="15"
               required>
           </div>
           <div class="col-md-4 position-relative">
             <label for="idprod" class="form-label">Código</label>
             <input type="text" class="form-control" id="idprod" name="idprod" minlength="10" maxlength="10"
-              placeholder="Digite o Código do Produto" required>
+              placeholder="Digite o código do produto" required>
           </div>
           <div class="col-md-4 position-relative">
-            <label for="tipoprod" class="form-label">Selecione o Tipo do Produto</label>
+            <label for="tipoprod" class="form-label">Selecione o tipo do produto</label>
             <select class="form-select" id="tipoprod" required>
               <option>Selecione</option>
               <option>Componente</option>
@@ -127,47 +121,49 @@
             </select>
           </div>
           <div class="col-md-4 position-relative">
-            <label for="valorprod" class="form-label">Valor</label>
+            <label for="valorprod" class="form-label">Valor unitário</label>
             <input type="text" class="form-control" id="valorprod" name="valorprod"
-              placeholder="Digite o Valor do Produto" required>
+              placeholder="Digite o valor unitário do produto" required>
           </div>
           <div class="col-md-4 position-relative">
-            <label for="nomefornecedor" class="form-label">Fornecedor</label>
-            <input type="text" class="form-control" id="nomefornecedor" maxlength="30"
-              placeholder="Digite o Nome do Fornecedor" required>
+            <label for="nomefornecedor" class="form-label">Modelo</label>
+            <input type="text" class="form-control" id="modeloprod" maxlength="30"
+              placeholder="Digite o modelo do produto" required>
           </div>
           <div class="col-md-4 position-relative">
-            <label for="idf" class="form-label">ID do Fornecedor</label>
-            <input type="text" class="form-control" id="idf" name="idf" minlength="14" maxlength="14"
-              placeholder="Digite o ID do Fornecedor" required>
+            <label for="idf" class="form-label">Quantidade</label>
+            <input type="text" class="form-control" id="quantprod" name="quantprod" minlength="14" maxlength="14"
+              placeholder="Digite a quantidade do produto" required>
           </div>
-          <div class="d-grid gap-2">
-            <button class="btn btn-outline-primary" type="submit" onclick="confirmacao()">Cadastrar</button>
+          <div class="row mt-5">
+            <div class="col-sm-12 text-center">
+              <button type="button" class="btn btn-outline-primary" onclick="confirmar()" style="width: 35%; margin-bottom: 5%;">Cadastrar</button>
+            </div>
           </div>
         </form>
 
         <!--Java script-->
         <script>
-          function confirmacao()
+          function confirmar()
           {
             dado1 = document.getElementById("nomeprod").value
             dado2 = document.getElementById("idprod").value
             dado3 = document.getElementById("tipoprod").value
-            dado4 = document.getElementById("nomefornecedor").value
+            dado4 = document.getElementById("modeloprod").value
             dado5 = document.getElementById("valorprod").value
-            dado6 = document.getElementById("idf").value
+            dado6 = document.getElementById("quantprod").value
 
           
-            if(dado1, dado2, dado4, dado5, dado6 == ""){
-              alert("insira algum dado, e tente novamente!")
-            }
+            //if(dado1 || dado2 || dado4 || dado5 || dado6 == ""){
+            //  alert("Alguma informação está em falta, confira os campos.")
+            //}
 
-            else if(dado3 == "Selecione"){
-              alert("Selecione o tipo do produto!")
-            }
+            //else if(dado3 == "Selecione"){
+            //  alert("Selecione o tipo do produto!")
+            // }
 
-            else
-            alert("Dados Cadastrados com Sucesso!")
+            //else
+            alert("Produto Cadastrado com Sucesso!")
           }
           </script>
 

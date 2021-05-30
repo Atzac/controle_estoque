@@ -24,15 +24,15 @@ function atualizarTabela() {
     produtos.forEach(produto => {
         let tr = document.createElement("tr"); // Criar linha.
         let buttons = document.createElement("div");
-        let mais = criarBotao("mais.png", "blue", "adicionarProduto(this)");
-        let menos = criarBotao("menos.png", "red", "removerProduto(this)");
-        let destruir = criarBotao("destruir.png", "black", "destruirProduto(this)")
+        let mais = criarBotao("mais.png", "DodgerBlue", "adicionarProduto(this)");
+        let menos = criarBotao("menos.png", "FireBrick", "removerProduto(this)");
+        let destruir = criarBotao("destruir.png", "#363636", "destruirProduto(this)")
         let number = document.createElement("input");
         number.style = "width: 60px;"
         number.type = "number";
         number.min = 0;
         number.value = 0;
-        let infos = [produto.id, produto.tipo, produto.modelo, "R$" + produto.valor.toFixed(2).toString().replace(".", ","), produto.quantidade];
+        let infos = [produto.id, produto.tipo, produto.modelo, "R$" + produto.valor.toString().replace(".", ","), produto.quantidade];
         for (let i = 0; i < infos.length; i++) {
             let info = document.createElement("td"); // Criar o elemento.
             info.innerHTML = infos[i]; // Guardar a informação no elemento.
@@ -88,7 +88,7 @@ produtos.push(new Produto(5, "Mouse", "Redragon Cobra", 114.9, 99));
 produtos.push(new Produto(6, "Mousepad", "Razer Fissure", 62.9, 58));
 produtos.push(new Produto(7, "Notebook", "Acer Nitro 5", 5.399, 4));
 produtos.push(new Produto(8, "Notebook", "Asus VivoBook", 2.754, 6));
-produtos.push(new Produto(9, "Notebook", "Dell Inspiron i5402", 6.7, 12));
+produtos.push(new Produto(9, "Notebook", "Dell Inspiron i5402", 3.299, 12));
 produtos.push(new Produto(10, "Notebook", "Apple MackBook Air", 8.899, 3));
 
 atualizarTabela();
